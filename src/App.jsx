@@ -187,6 +187,24 @@ function App() {
   }}
   variant="outlined"
 />
+        <TextField
+          required
+          className="input"
+          id="outlined-basic"
+          sx={{ margin: 0.5, color: "white" }}
+          InputLabelProps={{
+            sx: {
+              color: "white",
+            },
+          }}
+          label="Year"
+          color="warning"
+          inputProps={{ style: { fontFamily: "Poppins, sans-serif", color: "white" } }}
+          onChange={(event) => {
+            setYear(event.target.value);
+          }}
+          variant="outlined"
+        />
 
         <TextField
           required

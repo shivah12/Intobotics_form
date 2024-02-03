@@ -122,23 +122,28 @@ function App() {
           variant="outlined"
         />
         <TextField
-          required
-          className="input"
-          sx={{ margin: 0.5, color: "white", borderRadius:"30px" }}
-          id="outlined-basic"
-          label="Registration Number"
-          InputLabelProps={{
-            sx: {
-              color: "white",
-            },
-          }}
-          color="warning"
-          inputProps={{ style: { fontFamily: "Poppins, sans-serif", color: "white" } }}
-          onChange={(event) => {
-            setRegno(event.target.value);
-          }}
-          variant="outlined"
-        />
+  required
+  className="input"
+  id="outlined-basic"
+  sx={{ margin: 0.5, color: "white" }}
+  InputLabelProps={{
+    sx: {
+      color: "white",
+    },
+  }}
+  color="warning"
+  label="Registration Number"
+  inputProps={{
+    style: { fontFamily: "Poppins, sans-serif", color: "white" },
+    inputMode: "numeric",
+    pattern: "[0-9]*", // Only allows numeric input
+  }}
+  onChange={(event) => {
+    setRegno(event.target.value);
+  }}
+  variant="outlined"
+/>
+
         <TextField
           required
           className="input"
@@ -161,28 +166,47 @@ function App() {
           variant="outlined"
         />
         <TextField
+  required
+  className="input"
+  id="outlined-basic"
+  sx={{ margin: 0.5, color: "white" }}
+  InputLabelProps={{
+    sx: {
+      color: "white",
+    },
+  }}
+  color="warning"
+  label="Phone Number"
+  inputProps={{
+    style: { fontFamily: "Poppins, sans-serif", color: "white" },
+    inputMode: "numeric",
+    pattern: "[0-9]*", // Only allows numeric input
+  }}
+  onChange={(event) => {
+    setPhone(event.target.value);
+  }}
+  variant="outlined"
+/>
+
+
+        <TextField
           required
           className="input"
           id="outlined-basic"
-          sx={{ margin: 0.5 }}
+          sx={{ margin: 0.5, color: "white" }}
           InputLabelProps={{
             sx: {
               color: "white",
             },
           }}
+          label="Year"
           color="warning"
-          label="Phone Number"
-          inputProps={{
-            style: { fontFamily: "Poppins, sans-serif", color: "white" },
-            inputMode: "numeric",
-            pattern: "[0-9]*",
-          }}
+          inputProps={{ style: { fontFamily: "Poppins, sans-serif", color: "white" } }}
           onChange={(event) => {
-            setPhone(event.target.value);
+            setYear(event.target.value);
           }}
           variant="outlined"
         />
-        
         <TextField
           required
           className="input"

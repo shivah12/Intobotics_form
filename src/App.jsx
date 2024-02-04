@@ -1,8 +1,8 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { db } from "./firebase-config"
+import { db } from "./firebase-config";
 import { TextField, Button } from "@mui/material";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, onSnapshot, snapshotEqual } from "firebase/firestore";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -32,6 +32,13 @@ function App() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const usersCollectionRef = collection(db, "users");
+
+  useEffect(()=>{
+    onSnapshot(collection(db, "users"), (snapshot)  =>  {
+      console.log(snapshot.docs.map(doc => doc.data()))
+    })
+  })
+
 
   const createUser = async () => {
     const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
@@ -75,8 +82,6 @@ function App() {
   return (
     <div className="App">
       <div className="form">
-        
-        
         <img src="https://i.imgur.com/twT3QYh.png" alt="" />
         <TextField
           required
@@ -84,7 +89,6 @@ function App() {
           sx={{
             margin: 0.5,
             color: "white",
-            
           }}
           InputLabelProps={{
             sx: {
@@ -94,7 +98,9 @@ function App() {
           id="outlined-basic"
           label="Name"
           color="warning"
-          inputProps={{ style: { fontFamily: "Poppins, sans-serif", color: "white" } }}
+          inputProps={{
+            style: { fontFamily: "Poppins, sans-serif", color: "white" },
+          }}
           onChange={(event) => {
             setName(event.target.value);
           }}
@@ -115,34 +121,36 @@ function App() {
           id="outlined-basic"
           label="Branch"
           color="warning"
-          inputProps={{ style: { fontFamily: "Poppins, sans-serif", color: "white" } }}
+          inputProps={{
+            style: { fontFamily: "Poppins, sans-serif", color: "white" },
+          }}
           onChange={(event) => {
             setBranch(event.target.value);
           }}
           variant="outlined"
         />
         <TextField
-  required
-  className="input"
-  id="outlined-basic"
-  sx={{ margin: 0.5, color: "white" }}
-  InputLabelProps={{
-    sx: {
-      color: "white",
-    },
-  }}
-  color="warning"
-  label="Registration Number"
-  inputProps={{
-    style: { fontFamily: "Poppins, sans-serif", color: "white" },
-    inputMode: "numeric",
-    pattern: "[0-9]*", // Only allows numeric input
-  }}
-  onChange={(event) => {
-    setRegno(event.target.value);
-  }}
-  variant="outlined"
-/>
+          required
+          className="input"
+          id="outlined-basic"
+          sx={{ margin: 0.5, color: "white" }}
+          InputLabelProps={{
+            sx: {
+              color: "white",
+            },
+          }}
+          color="warning"
+          label="Registration Number"
+          inputProps={{
+            style: { fontFamily: "Poppins, sans-serif", color: "white" },
+            inputMode: "numeric",
+            pattern: "[0-9]*", // Only allows numeric input
+          }}
+          onChange={(event) => {
+            setRegno(event.target.value);
+          }}
+          variant="outlined"
+        />
 
         <TextField
           required
@@ -166,27 +174,28 @@ function App() {
           variant="outlined"
         />
         <TextField
-  required
-  className="input"
-  id="outlined-basic"
-  sx={{ margin: 0.5, color: "white" }}
-  InputLabelProps={{
-    sx: {
-      color: "white",
-    },
-  }}
-  color="warning"
-  label="Phone Number"
-  inputProps={{
-    style: { fontFamily: "Poppins, sans-serif", color: "white" },
-    inputMode: "numeric",
-    pattern: "[0-9]*", // Only allows numeric input
-  }}
-  onChange={(event) => {
-    setPhone(event.target.value);
-  }}
-  variant="outlined"
-/>
+          required
+          className="input"
+          id="outlined-basic"
+          sx={{ margin: 0.5, color: "white" }}
+          InputLabelProps={{
+            sx: {
+              color: "white",
+            },
+          }}
+          color="warning"
+          label="Phone Number"
+          inputProps={{
+            style: { fontFamily: "Poppins, sans-serif", color: "white" },
+            inputMode: "numeric",
+            pattern: "[0-9]*", // Only allows numeric input
+          }}
+          onChange={(event) => {
+            setPhone(event.target.value);
+          }}
+          variant="outlined"
+        />
+
         <TextField
           required
           className="input"
@@ -199,13 +208,14 @@ function App() {
           }}
           label="Year"
           color="warning"
-          inputProps={{ style: { fontFamily: "Poppins, sans-serif", color: "white" } }}
+          inputProps={{
+            style: { fontFamily: "Poppins, sans-serif", color: "white" },
+          }}
           onChange={(event) => {
             setYear(event.target.value);
           }}
           variant="outlined"
         />
-
         <TextField
           required
           className="input"
@@ -218,25 +228,25 @@ function App() {
           }}
           label="Why are you interested in joining VSSUT Robotics?"
           color="warning"
-          inputProps={{ style: { fontFamily: "Poppins, sans-serif", color: "white" } }}
+          inputProps={{
+            style: { fontFamily: "Poppins, sans-serif", color: "white" },
+          }}
           onChange={(event) => {
             setDesc(event.target.value);
           }}
           variant="outlined"
         />
         <Button
-  type="submit"
-  variant="contained"
-  sx={{
-    fontFamily: "'Poppins', sans-serif",
-    // add other styles as needed
-  }}
-  onClick={createUser}
->
-  Submit
-</Button>
-
-
+          type="submit"
+          variant="contained"
+          sx={{
+            fontFamily: "'Poppins', sans-serif",
+            // add other styles as needed
+          }}
+          onClick={createUser}
+        >
+          Submit
+        </Button>
 
         <Modal
           open={open}

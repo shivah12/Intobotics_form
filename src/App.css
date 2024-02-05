@@ -1,14 +1,28 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap'); */
 .App {
+  position: relative;
   display: flex;
   max-width: 100%;
   justify-content: center;
-  background-image:
-    radial-gradient(rgba(50, 82, 135, 0.415), rgba(26, 30, 31, 0.73)),
-    url('https://talkingtobots.com/wp-content/uploads/2020/08/Untitled-1-copy-1-768x864.jpg');
   height: 160vh;
+  overflow: hidden;
+}
+
+.App::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(rgba(61, 94, 147, 0.642), rgba(8, 15, 17, 0.423)),
+    url('https://bpic.588ku.com/back_pic/06/04/38/2960f6e3350b8f8.jpg');
   background-repeat: repeat;
   background-size: cover;
   background-position: center;
+  filter: blur(5px); 
 }
 
 .form {

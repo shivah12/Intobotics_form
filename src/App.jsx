@@ -119,7 +119,7 @@ function App() {
             },
           }}
           id="outlined-basic"
-          label="Branch"
+          label="Branch(Give the full name)"
           color="warning"
           inputProps={{
             style: { fontFamily: "Poppins, sans-serif", color: "white" },

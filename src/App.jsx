@@ -99,7 +99,7 @@ function App() {
           label="Name"
           color="warning"
           inputProps={{
-            style: { fontFamily: "Poppins, sans-serif", color: "white" },
+            style: { fontFamily: 'SF Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;, color: "white" },
           }}
           onChange={(event) => {
             setName(event.target.value);
@@ -122,7 +122,7 @@ function App() {
           label="Branch(Give the full name)"
           color="warning"
           inputProps={{
-            style: { fontFamily: "Poppins, sans-serif", color: "white" },
+            style: { fontFamily: 'SF Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;, color: "white" },
           }}
           onChange={(event) => {
             setBranch(event.target.value);
@@ -142,7 +142,7 @@ function App() {
           color="warning"
           label="Registration Number"
           inputProps={{
-            style: { fontFamily: "Poppins, sans-serif", color: "white" },
+            style: { fontFamily: 'SF Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;, color: "white" },
             inputMode: "numeric",
             pattern: "[0-9]*", // Only allows numeric input
           }}
@@ -165,7 +165,7 @@ function App() {
           label="Email Id"
           color="warning"
           inputProps={{
-            style: { fontFamily: "Poppins, sans-serif", color: "white" },
+            style: { fontFamily: 'SF Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;, color: "white" },
             inputMode: "email",
           }}
           onChange={(event) => {
@@ -186,7 +186,7 @@ function App() {
           color="warning"
           label="Phone Number"
           inputProps={{
-            style: { fontFamily: "Poppins, sans-serif", color: "white" },
+            style: { fontFamily: 'SF Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;, color: "white" },
             inputMode: "numeric",
             pattern: "[0-9]*", // Only allows numeric input
           }}
@@ -209,7 +209,7 @@ function App() {
           label="Year"
           color="warning"
           inputProps={{
-            style: { fontFamily: "Poppins, sans-serif", color: "white" },
+            style: { fontFamily: 'SF Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;, color: "white" },
           }}
           onChange={(event) => {
             setYear(event.target.value);
@@ -229,7 +229,7 @@ function App() {
           label="Why are you interested in joining VSSUT Robotics?"
           color="warning"
           inputProps={{
-            style: { fontFamily: "Poppins, sans-serif", color: "white" },
+            style: { fontFamily: 'SF Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;, color: "white" },
           }}
           onChange={(event) => {
             setDesc(event.target.value);

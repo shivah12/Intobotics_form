@@ -1,8 +1,10 @@
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import { useEffect, useState } from "react";
 import { db } from "./firebase-config";
+import { collection, addDoc, onSnapshot } from "firebase/firestore";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { TextField, Button } from "@mui/material";
-import { collection, addDoc, onSnapshot, snapshotEqual } from "firebase/firestore";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -28,43 +30,35 @@ function App() {
   const [phone, setPhone] = useState("");
   const [year, setYear] = useState("");
   const [open, setOpen] = useState(false);
-  const [desc, setDesc] = useState(false);
+  const [desc, setDesc] = useState("");
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const usersCollectionRef = collection(db, "users");
 
-  useEffect(()=>{
-    onSnapshot(collection(db, "users"), (snapshot)  =>  {
-      console.log(snapshot.docs.map(doc => doc.data()))
-    })
-  })
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
+  useEffect(() => {
+    onSnapshot(collection(db, "users"), (snapshot) => {
+      console.log(snapshot.docs.map((doc) => doc.data()));
+    });
+  }, []);
 
   const createUser = async () => {
     const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
     if (!regEx.test(email) && email !== "") {
       alert("Please fill Email field properly");
-    }
-    if (
-      name == null ||
-      name == "" ||
-      branch == null ||
-      branch == "" ||
-      regno == null ||
-      regno == "" ||
-      email == null ||
-      email == "" ||
-      phone == null ||
-      phone == "" ||
-      year == null ||
-      year == "" ||
-      email == null ||
-      email == "" ||
-      desc == null ||
-      desc == ""
+    } else if (
+      !name ||
+      !branch ||
+      !regno ||
+      !email ||
+      !phone ||
+      !year ||
+      !desc
     ) {
       alert("Please Fill In All Required Fields");
-      return false;
     } else {
       await addDoc(usersCollectionRef, {
         Branch: branch,
@@ -81,8 +75,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className="form">
-        <img src="https://i.imgur.com/twT3QYh.png" alt="" />
+      <div className="form" data-aos="fade-up">
+        <img
+          src="https://i.imgur.com/twT3QYh.png"
+          alt=""
+          data-aos="fade-right"
+        />
         <TextField
           required
           className="inputField"
@@ -105,6 +103,7 @@ function App() {
             setName(event.target.value);
           }}
           variant="outlined"
+          data-aos="fade-up"
         />
         <TextField
           required
@@ -128,6 +127,7 @@ function App() {
             setBranch(event.target.value);
           }}
           variant="outlined"
+          data-aos="fade-up"
         />
         <TextField
           required
@@ -139,19 +139,19 @@ function App() {
               color: "white",
             },
           }}
-          color="warning"
           label="Registration Number"
+          color="warning"
           inputProps={{
             style: { fontFamily: "Poppins, sans-serif", color: "white" },
             inputMode: "numeric",
-            pattern: "[0-9]*", // Only allows numeric input
+            pattern: "[0-9]*",
           }}
           onChange={(event) => {
             setRegno(event.target.value);
           }}
           variant="outlined"
+          data-aos="fade-up"
         />
-
         <TextField
           required
           className="input"
@@ -172,6 +172,7 @@ function App() {
             setEmail(event.target.value);
           }}
           variant="outlined"
+          data-aos="fade-up"
         />
         <TextField
           required
@@ -183,19 +184,19 @@ function App() {
               color: "white",
             },
           }}
-          color="warning"
           label="Phone Number"
+          color="warning"
           inputProps={{
             style: { fontFamily: "Poppins, sans-serif", color: "white" },
             inputMode: "numeric",
-            pattern: "[0-9]*", // Only allows numeric input
+            pattern: "[0-9]*",
           }}
           onChange={(event) => {
             setPhone(event.target.value);
           }}
           variant="outlined"
+          data-aos="fade-up"
         />
-
         <TextField
           required
           className="input"
@@ -215,6 +216,7 @@ function App() {
             setYear(event.target.value);
           }}
           variant="outlined"
+          data-aos="fade-up"
         />
         <TextField
           required
@@ -235,15 +237,16 @@ function App() {
             setDesc(event.target.value);
           }}
           variant="outlined"
+          data-aos="fade-up"
         />
         <Button
           type="submit"
           variant="contained"
           sx={{
             fontFamily: "'Poppins', sans-serif",
-            // add other styles as needed
           }}
           onClick={createUser}
+          data-aos="fade-up"
         >
           Submit
         </Button>

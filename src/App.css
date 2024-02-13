@@ -1,4 +1,4 @@
-
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap'); */
 .App {
   position: relative;
   display: flex;
@@ -17,7 +17,7 @@
   bottom: 0;
   z-index: -1;
   background-image:
-    radial-gradient(rgba(61, 94, 147, 0.642), rgba(8, 15, 17, 0.423)),
+    radial-gradient(rgba(56, 71, 95, 0.642), rgba(12, 23, 25, 0.49)),
     url('https://bpic.588ku.com/back_pic/06/04/38/2960f6e3350b8f8.jpg');
   background-repeat: repeat;
   background-size: cover;

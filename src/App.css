@@ -3,7 +3,7 @@
     display: flex;
     max-width: 100%;
     justify-content: center;
-    height: 160vh;
+    min-height: 100vh; 
     overflow: hidden;
 }
 
@@ -34,10 +34,13 @@
     width: 70%;
     justify-content: center;
     z-index: 100;
+    margin-bottom: 20px; 
 }
 
 .form > img {
     margin-bottom: 10px;
+    max-width: 100%; 
+    height: auto; 
 }
 
 .form .inputField {
@@ -82,16 +85,10 @@
     margin-bottom: 10px;
 }
 
-#vssut {
-    height: 8vh;  
-}
-
-#robo {
-    height: 7vh;  
-}
-
+#vssut,
+#robo,
 #rslogo {
-    height: 8vh;  
+    height: 8vh; 
 }
 
 @media only screen and (max-width: 780px) {
@@ -115,23 +112,5 @@
 
     #rslogo {
         height: 6vh;  
-    }
-}
-
-@media only screen and (min-width: 781px) {
-    .logos {
-        gap: 20px; 
-    }
-
-    #vssut {
-        height: 8vh;  
-    }
-
-    #robo {
-        height: 7vh;  
-    }
-
-    #rslogo {
-        height: 8vh;  
     }
 }

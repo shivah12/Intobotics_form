@@ -1,14 +1,31 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap'); */
 .App {
-  position: relative;
-  display: flex;
-  max-width: 100%;
-  justify-content: center;
-  height: 160vh;
-  overflow: hidden;
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    height: 160vh;
+    overflow: hidden;
 }
 
 .App::before {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: radial-gradient(
+            rgba(245, 96, 63, 0.484),
+            rgba(137, 87, 255, 0.354)
+        ),
+        url("md_myjze9_aaab7ae6907dff0f240905491c135449085d2ed2.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+=======
   content: '';
   position: absolute;
   top: 0;
@@ -26,56 +43,79 @@
 }
 
 .form {
-  display: flex;
-  position: relative;
-  margin-top: 10px;
-  flex-direction: column;
-  width: 45%;
-  justify-content: center;
-  z-index: 100;
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+    flex-direction: column;
+    width: 70%;
+    justify-content: center;
+    z-index: 100;
 }
 
-
-
 .form > img {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .form .inputField {
-  margin: 5px;
-  border-radius: 15px; 
+    margin: 5px;
+    border-radius: 15px;
 }
 
 .MuiOutlinedInput-notchedOutline {
-  border-color: #ffffff !important;
+    border-color: #ffffff !important;
 }
 
 .form > button {
-  background-color: red;
-  border: 2px solid transparent;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  padding-left: 40px;
-  padding-right: 40px;
-  font-weight: 600;
-  max-width: 160px;
-  margin-top: 10px;
-  transition: box-shadow 0.3s ease, border 0.3s ease, background-color 0.3s ease;
-  /* Initial box shadow */
-  box-shadow: 0 2px 4px rgba(69, 67, 67, 0.579);
+    background-color: rgba(38, 85, 254, 0.993);
+    border: 2px solid transparent;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-weight: 600;
+    max-width: 160px;
+    margin-top: 10px;
+    transition: box-shadow 0.3s ease, border 0.3s ease,
+        background-color 0.3s ease;
+    /* Initial box shadow */
+    box-shadow: 0 2px 4px rgba(69, 67, 67, 0.579);
 }
 
 .form > button:hover {
-  box-shadow: 0 4px 8px rgba(134, 126, 126, 0.645);
-  border: 2px solid transparent;
-  background-color: rgb(29, 23, 83);
+    box-shadow: 0 4px 8px rgba(134, 126, 126, 0.645);
+    border: 2px solid transparent;
+    background-color: rgb(29, 23, 83);
+}
+
+.logos {
+    /* position: relative; */
+    display: flex;
+    max-width: 100%;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#vssut {
+    height: 8vh;
+}
+
+#robo {
+    display: block;
+    height: 7vh;
+}
+
+#rslogo {
+    height: 8vh;
 }
 
 @media only screen and (max-width: 768px) {
-  .form {
-    width: 100%;
-    height: auto;
-    font-size: 16px; 
-  }
+    .form {
+        width: 100%;
+        height: auto;
+        font-size: 16px;
+    }
 }

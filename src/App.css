@@ -75,7 +75,7 @@
 .logos {
     display: flex;
     max-width: 100%;
-    gap: 10px;  
+    gap: 10px;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -83,15 +83,15 @@
 }
 
 #vssut {
-    height: 8vh;  
+    height: 8vh;
 }
 
 #robo {
-    height: 7vh;  
+    height: 7vh;
 }
 
 #rslogo {
-    height: 8vh;  
+    height: 8vh;
 }
 @media only screen and (max-width: 768px) {
     .form {
@@ -101,19 +101,19 @@
     }
 
     .logos {
-        gap: 2px; 
+        gap: 2px;
     }
 
     #vssut {
-        height: 5vh;  
+        height: 5vh;
     }
 
     #robo {
-        height: 4vh;  
+        height: 6vh;
     }
 
     #rslogo {
-        height: 5vh;  
+        height: 5vh;
     }
 }
 @media only screen and (max-width: 780px) {
@@ -124,22 +124,22 @@
     }
 
     .logos {
-        gap: 2px; 
+        gap: 2px;
     }
 
     #vssut {
-        height: 6vh;  
+        height: 6vh;
     }
 
     #robo {
-        height: 5vh;  
+        height: 5vh;
     }
 
     #rslogo {
-        height: 6vh;  
+        height: 6vh;
     }
 }
-@media only screen and (min-width: 850px) {
+@media only screen and (max-width: 850px) {
     .form {
         width: 55%;
         height: auto;
@@ -147,18 +147,18 @@
     }
 
     .logos {
-        gap: 2px; 
+        gap: 2px;
     }
 
     #vssut {
-        height: 15vh;  
+        height: 15vh;
     }
 
     #robo {
-        height: 10vh;  
+        height: 10vh;
     }
 
     #rslogo {
-        height: 15vh;  
+        height: 15vh;
     }
 }

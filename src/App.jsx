@@ -109,7 +109,6 @@ function App() {
                     }}
                     id="outlined-basic"
                     label="Name"
-                    placeholder="Enter Full Name"
                     color="warning"
                     inputProps={{
                         style: {
@@ -310,6 +309,7 @@ function App() {
                             component="p"
                         >
                             You are successfully registered.
+                            Kindly submit only once!
                         </Typography>
                     </Box>
                 </Modal>

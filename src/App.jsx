@@ -109,6 +109,7 @@ function App() {
                     }}
                     id="outlined-basic"
                     label="Name"
+                    placeholder="Enter Full Name"
                     color="warning"
                     inputProps={{
                         style: {

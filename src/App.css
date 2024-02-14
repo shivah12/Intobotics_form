@@ -117,7 +117,7 @@
         height: 6vh;  
     }
 }
-@media only screen and (min-width: 825px) {
+@media only screen and (min-width: 850px) {
     .form {
         width: 55%;
         height: auto;

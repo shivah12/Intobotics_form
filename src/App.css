@@ -117,3 +117,26 @@
         height: 6vh;  
     }
 }
+@media only screen and (min-width: 825px) {
+    .form {
+        width: 55%;
+        height: auto;
+        font-size: 16px;
+    }
+
+    .logos {
+        gap: 2px; 
+    }
+
+    #vssut {
+        height: 15vh;  
+    }
+
+    #robo {
+        height: 10vh;  
+    }
+
+    #rslogo {
+        height: 15vh;  
+    }
+}

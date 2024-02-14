@@ -117,3 +117,21 @@
         height: 6vh;  
     }
 }
+
+@media only screen and (min-width: 781px) {
+    .logos {
+        gap: 20px; 
+    }
+
+    #vssut {
+        height: 8vh;  
+    }
+
+    #robo {
+        height: 7vh;  
+    }
+
+    #rslogo {
+        height: 8vh;  
+    }
+}

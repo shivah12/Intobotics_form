@@ -108,7 +108,7 @@ function App() {
                         },
                     }}
                     id="outlined-basic"
-                    label="Name"
+                    label="Full Name"
                     color="warning"
                     inputProps={{
                         style: {
@@ -241,7 +241,7 @@ function App() {
                             color: "white",
                         },
                     }}
-                    label="Year"
+                    label="Passing Year"
                     color="warning"
                     inputProps={{
                         style: {

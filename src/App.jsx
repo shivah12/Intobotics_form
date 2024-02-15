@@ -241,7 +241,7 @@ function App() {
                             color: "white",
                         },
                     }}
-                    label="Passing Year"
+                    label="Year of Passing"
                     color="warning"
                     inputProps={{
                         style: {
